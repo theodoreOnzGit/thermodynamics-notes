@@ -4,6 +4,9 @@
 #show par: set block(spacing: 0.55em)
 #show heading: set block(above: 1.4em, below: 1em)
 
+// equation numbering
+#set math.equation(numbering: "(1)")
+
 = Motivation for Studying Thermodynamics
 
 Why on earth do we spend so much time studying thermodynamics? Well,
@@ -159,36 +162,169 @@ $ "ds"  = (delta q)/T "dT" $
 
 If we combine the first and second law (todo: improve explanation):
 
-$ "dU" = T "ds" - P d tilde(V) $
+$ "du" = T "ds" - P d tilde(V) $
 
 In an isentropic process, ds = 0 $J/("mol" K)$.
 Therefore:
 
-$ "dU" =  - P d tilde(V) $
+$ "du" =  - P d tilde(V) $
 
 Now, how can we relate the temperature of the gas to its energy?
 (note: need to introduce concept of calculus)
 
-$ "dU"(T,tilde(V)) = ( (diff U)/(diff T) )_tilde(V) "dT" + ( (diff U)/(diff tilde(V)) )_T d tilde(V) $
+$ "du"(T,tilde(V)) = ( (diff u)/(diff T) )_tilde(V) "dT" + ( (diff u)/(diff tilde(V)) )_T d tilde(V) $
 
-We define $c_v =( (diff U)/(diff T) )_tilde(V) $. This is a measurable 
+We define $c_v =( (diff u)/(diff T) )_tilde(V) $. This is a measurable 
 property called the constant volume heat capacity.
 
-$ "dU"(T,tilde(V)) = c_tilde(V) "dT" + ( (diff U)/(diff tilde(V)) )_T d tilde(V) $
+$ "du"(T,tilde(V)) = c_tilde(V) "dT" 
++ ( (diff u)/(diff tilde(V)) )_T d tilde(V) $<eqn:du-cv-dt>
 
-Now, we want to eliminate $U$ from the right hand side, and make it 
+Now, we want to eliminate $u$ from the right hand side, and make it 
 in terms of temperature, pressure and volume only. By doing so, 
 we can calculate the change in internal energy based on the 
 temperature. These are things we can measure. How do we do so?
 
 For this, we can reintroduce our first and second law to provide us 
-additional equations to find U in terms of T and tilde(V).
+additional equations to find u in terms of T and tilde(V).
 
 (in progress)
-$ "dU" = T "ds" - P d tilde(V) $
-we can compare this with:
-$ "dU" = ( (diff U)/(diff s) )_tilde(V) "ds" - ( (diff U)/(diff tilde(V)) )_s  d tilde(V) $
+$ "du" = T "ds" - P d tilde(V) $<eqn:du-tds-pdv>
 
+To do so, we need to find $u(T, tilde(V))$ using the first and second 
+law combination. And to do that, we need to eliminate $"ds"$. Since 
+we want $u(T, tilde(V))$, we need $S(T, tilde(V))$ to fully eliminate S 
+and find the right hand side of @eqn:du-tds-pdv.
+
+$ "ds"(T,tilde(V)) =  ( (diff s)/(diff T) )_tilde(V) "dT" 
++ ( (diff s)/(diff tilde(V)) )_T d tilde(V) $<ds-t-v>
+
+Okay, so we have $S(T, tilde(V))$, but we now have partial derivatives 
+of s we need to get rid of. How shall we do so? Let's substitute 
+@ds-t-v into @eqn:du-tds-pdv first, perhaps we can get some clarity.
+
+$ "du" = T [( (diff s)/(diff T) )_tilde(V) "dT" 
++ ( (diff s)/(diff tilde(V)) )_T d tilde(V)] - P d tilde(V) $
+
+$ "du" =  T( (diff s)/(diff T) )_tilde(V) "dT" 
++ [T( (diff s)/(diff tilde(V)) )_T  - P ] d tilde(V) $<eqn:du-t-s-p-v>
+
+Now, let's compare @eqn:du-t-s-p-v to @eqn:du-cv-dt, we see that we don't 
+really need to worry about $( (diff s)/(diff tilde(V)) )_T$ because if 
+we compare the dT terms:
+
+$ c_tilde(V) = T ( (diff s)/(diff T) )_tilde(V) $
+
+This leaves us with
+
+$ "du" =  c_tilde(V) "dT" + 
+[T( (diff s)/(diff tilde(V)) )_T  - P ] d tilde(V) $
+
+However, we find ourselves with yet another problem:
+$( (diff s)/(diff tilde(V)) )_T$. Are we back at square one? Thankfully,
+there are ways around this. We just need to use some calculus.
+
+== The Maxwell Relations (First and Third)
+
+Thermodynamics has a set of partial derivatives known as the Maxwell 
+relation which can help us solve this problem. These are not to be confused 
+with the Maxwell equations for electromagnetic waves, but it's the same 
+guy: James Clerk Maxwell. He's just really smart.
+
+Now, the Maxwell relations are based on Schawrz's theorem (according 
+to Wikipedia, but also you can see this @Camargo2020). It basically 
+says that for any function based on two variables, say M 
+@Cengel2011 :
+
+$ ( (diff M)/(diff x) )_y = ( (diff M)/(diff y) )_x $
+
+Now, based on our first and second law of thermodynamics:
+
+$ "du" = T "ds" - P d tilde(V) $
+$ "du"(S,tilde(V)) = ( (diff u)/(diff s) )_tilde(V) "ds" 
++  ( (diff u)/(diff tilde(V)) )_s d tilde(V) $
+
+So, when comparing coefficients: 
+
+$ T = ( (diff u)/(diff s) )_tilde(V) $<eqn:T-u-s>
+$ -P = ( (diff u)/(diff tilde(V)) )_s $<eqn:P-u-v>
+
+If we differentiate @eqn:T-u-s by $d tilde(V)$ and 
+@eqn:P-u-v by ds,
+
+$  ((diff T)/(diff tilde(V)))_s =  
+[(diff )/(diff tilde(V)) ( (diff u)/(diff s) )_tilde(V) ]_s $
+
+$ -((diff P)/(diff s))_tilde(V) 
+= [(diff )/(diff s) ( (diff u)/(diff tilde(V)) )_s ]_tilde(V)  $
+
+By Schawrz's theorem, the order of partial derivatives doesn't matter.
+So:
+
+$ -((diff P)/(diff s))_tilde(V) 
+=  ((diff T)/(diff tilde(V)))_s $<eqn:maxwell-thermo-1>
+
+@eqn:maxwell-thermo-1 is the first of four Maxwell relations. These 
+are meant to help us zap away those pesky confusing derivatives. 
+@eqn:maxwell-thermo-1 is not quite helpful for our situation, so we'll 
+need something else. We need a term where entropy is on the right hand 
+side, and not a derivative. To do so, let us combine two things.
+First @eqn:du-tds-pdv:
+
+$ "du" = T "ds" - P d tilde(V) $
+
+And secondly, we define helmholtz free energy:
+
+$ a equiv u - T s $<eqn:helmholtz-definition>
+
+When we take derivatives, we find s on the right hand side:
+
+$ "da" equiv "du" - T "ds" - s "dT" $
+
+Looks like $"du" - T "ds"$ pops up, and that is simply $-P d tilde(V)$.
+We substitute this in to get:
+
+
+$ "da" = - s "dT" - P d tilde(V) $<eqn:da-sdt-pdv>
+
+In @eqn:da-sdt-pdv, we do have s on the right hand side. Thankfully, if 
+we apply Schawrz's rule in a similar manner, we can find out:
+
+$  -((diff s)/(diff tilde(V)))_T =  
+[(diff )/(diff tilde(V)) ( (diff a)/(diff T) )_tilde(V) ]_T $
+
+$ -((diff P)/(diff T))_tilde(V) 
+= [(diff )/(diff T) ( (diff a)/(diff tilde(V)) )_T ]_tilde(V)  $
+
+Since the order of derivatives doesn't matter, we find Maxwell's third 
+relation:
+
+$ ((diff s)/(diff tilde(V)))_T 
+= ((diff P)/(diff T))_tilde(V) $<eqn:maxwell-thermo-3>
+
+@eqn:maxwell-thermo-3 is Maxwell's third relation. The second and fourth 
+relation is something we won't touch just yet, until it is something we 
+really need. @eqn:maxwell-thermo-3 is just what we need for now to get 
+rid of the s on the right hand side.
+
+== Back to the Adibatic Isentropic Process
+
+Let's substitute @eqn:maxwell-thermo-3 back in:
+
+$ "du" =  c_tilde(V) "dT" + 
+[T( (diff s)/(diff tilde(V)) )_T  - P ] d tilde(V) $
+
+So we obtain:
+
+$ "du" =  c_tilde(V) "dT" + 
+[T( (diff P)/(diff T) )_tilde(V)  - P ] d tilde(V) $<eqn:du-p-v-t>
+
+Great, now we have an expression for internal energy purely in terms 
+of measurable properties (P, $tilde(V)$, T and $c_tilde(V)$). Note 
+that the whole point of doing the calculus is for us to get usable forms 
+of equations we can use to relate internal energy (and other properties) 
+to measurable properties. It's a little bit like solving a complex puzzle, 
+but we have achieved our goal for now.
 
 
 #bibliography("../library.bib", 
