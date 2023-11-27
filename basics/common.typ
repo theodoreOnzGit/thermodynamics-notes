@@ -554,8 +554,49 @@ digits: 4)
 
 $ k = c_p/c_tilde(V) = 5/3 = #cp_cv_ratio_monoatomic_gas $
 
-== Pressure and Volume Relations
+We previously found that:
 
+$  (T_2/T_1) =   (tilde(V)_1/tilde(V)_2)^( R/c_tilde(V)) $
+
+For ideal gas, $c_p  = c_tilde(V)  +  R$, so:
+
+$  (T_2/T_1) =   (tilde(V)_1/tilde(V)_2)^( (c_P - c_tilde(V))/c_tilde(V)) $
+$  (T_2/T_1) =   (tilde(V)_1/tilde(V)_2)^( k - 1) $
+
+== Pressure and Temperature Relations
+
+For an isentropic and adiabatic expansion process, we use:
+
+$ "dh" = T "ds" + tilde(V) "dP" $
+
+For an adiabatic isentropic process, $T "ds" = 0$ as there is no heat 
+addition and no entropy change ds = 0.
+
+$ "dh" = tilde(V) "dP" $
+
+For an ideal gas, 
+$ c_P "dT" = tilde(V) "dP" $
+$ c_P "dT" = (R T)/P "dP" $
+
+$ c_P/T "dT" = (R )/P "dP" $
+$ c_P ln (T_2/T_1) = R ln(P_2/P_1) $
+$ (T_2/T_1)^(c_P) = (P_2/P_1)^R $
+$ (T_2/T_1) = (P_2/P_1)^(R/c_P) $
+$ (T_2/T_1) = (P_2/P_1)^(c_tilde(V)/c_P R/c_tilde(V)) $
+$ (T_2/T_1) = (P_2/P_1)^(1/k (k-1)) $
+$ (T_2/T_1) = (P_2/P_1)^((k-1)/k ) $
+
+
+== Pressure and Volume Relations
+Given that for an ideal gas:
+$ (T_2/T_1) = (P_2/P_1)^((k-1)/k ) $
+and
+$  (T_2/T_1) =   (tilde(V)_1/tilde(V)_2)^( k - 1) $
+
+It follows that:
+
+$  (P_2/P_1)^((k-1)/k ) =   (tilde(V)_1/tilde(V)_2)^( k - 1) $
+$  (P_2/P_1) =   (tilde(V)_1/tilde(V)_2)^k $
 
 
 #bibliography("../library.bib", 
