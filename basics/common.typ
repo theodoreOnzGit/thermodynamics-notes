@@ -414,7 +414,24 @@ how an ideal heat engine would work. This engine is the Carnot Engine.
 It is based on the assumption that every process is reversible and that 
 there is no entropy generation.
 
-Now, 
+Now, for the Carnot Engine, we conceptualise it as an Engine using an 
+ideal gas as the working fluid. We shall need to supply heat to the 
+gas and extract out as much work as possible from it by minimising entropy 
+generation. To do this, we ensure that we add heat in a reversible manner.
+
+Normally, irreversibilities are generated when heat flows from a high 
+temperature to a low temperature. This is because once net heat flows 
+from high to low temperature, it cannot flow back up from low temperature 
+to high temperature without external intervention. This is an observation 
+we make in nature. Since this is the case, we minimise entropy generation 
+by adding heat to our engine isothermally. This is, in fact, the first 
+step of the Carnot Engine.
+
+How shall we add heat isothermally? We know that when heating something 
+up, the temperature will increase. Suppose a small quantity of heat from 
+the thermal reservoir enters the gas  $delta q$. The gas heats up just a 
+tiny bit 
+
 
 TBC
 
