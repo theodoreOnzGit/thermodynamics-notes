@@ -324,7 +324,49 @@ of measurable properties (P, $tilde(V)$, T and $c_tilde(V)$). Note
 that the whole point of doing the calculus is for us to get usable forms 
 of equations we can use to relate internal energy (and other properties) 
 to measurable properties. It's a little bit like solving a complex puzzle, 
-but we have achieved our goal for now.
+but we have achieved our goal for now. With this, we can calculate 
+how much work we can extract by letting our gas expand from a hot gas to 
+a colder gas.
+
+In adiabatic isentropic expansion, we get:
+
+$ "du" = - P d tilde(V) $
+
+And regardless of the process, we have:
+
+$ "du" =  c_tilde(V) "dT" + 
+[T( (diff P)/(diff T) )_tilde(V)  - P ] d tilde(V) $
+
+Now, for a start, we can calculate this for an ideal gas.
+
+$ P tilde(V) = R T $
+$ P  = (R T)/(tilde(V)) $
+$ ( (diff P)/(diff T) )_tilde(V)  = (R)/(tilde(V)) $
+
+$ "du" =  c_tilde(V) "dT" + [ T R/tilde(V)  - P ] d tilde(V) $
+
+For an ideal gas, $[ T R/tilde(V)  - P ] = 0$. Therefore,
+
+
+$ "du" =  c_tilde(V) "dT" $
+
+Now, for isentropic adiabatic expansion, we can compare:
+
+$ "du" =  c_tilde(V) "dT" $
+$ "du" = - P d tilde(V) $
+
+$  c_tilde(V) "dT" = - P d tilde(V) $
+
+We eliminate P from the equation:
+
+$  c_tilde(V) "dT" = - (R T)/(tilde(V)) d tilde(V) $
+$  c_tilde(V)/T "dT" = - R /(tilde(V)) d tilde(V) $
+
+
+Therefore, if we integrate between two states:
+
+
+$  c_tilde(V) ln (T_2/T_1) = - R ln (tilde(V)_2/tilde(V)_1) $
 
 
 #bibliography("../library.bib", 
