@@ -120,7 +120,7 @@ of the microscopic kinetic energy) is generated.
 
 How can we quantify this amount of energy produced? For simplicity, we use 
 simpler formulas to try and calculate this upper bound. We have our beloved 
-ideal gas equation. 
+ideal gas equation @Cengel2011:
 
 $ P tilde(V) = R T $
 
@@ -132,6 +132,62 @@ perspective, therefore I use moles instead of mass even though historically
 speaking, thermodynamics was developed in the context of mechanical engineering 
 and engines.
 
+Now, the process we described here is an adiabatic and isentropic process,
+adiabatic as in no heat exchanged with surroundings and isentropic as 
+in "iso-entropy-ic" or same entropy. This means no entropy generation 
+in this closed system. This is also known as reversible. What can we use 
+to describe this process? 
+
+We can use the first law 
+
+$ Delta U = Q + W $
+
+W is total work done on the system, and Q is total heat input into 
+the system. $Delta U$ is the change of internal energy of the system.
+
+The is also used:
+
+$ Delta S = integral (delta Q)/T "dT" $ 
+
+In differential form:
+$ "dS"  = integral (delta Q)/T "dT" $ 
+
+S is entropy.
+If we consider a per mole basis,
+
+$ "ds"  = (delta q)/T "dT" $ 
+
+If we combine the first and second law (todo: improve explanation):
+
+$ "dU" = T "ds" - P d tilde(V) $
+
+In an isentropic process, ds = 0 $J/("mol" K)$.
+Therefore:
+
+$ "dU" =  - P d tilde(V) $
+
+Now, how can we relate the temperature of the gas to its energy?
+(note: need to introduce concept of calculus)
+
+$ "dU"(T,tilde(V)) = ( (diff U)/(diff T) )_tilde(V) "dT" + ( (diff U)/(diff tilde(V)) )_T d tilde(V) $
+
+We define $c_v =( (diff U)/(diff T) )_tilde(V) $. This is a measurable 
+property called the constant volume heat capacity.
+
+$ "dU"(T,tilde(V)) = c_tilde(V) "dT" + ( (diff U)/(diff tilde(V)) )_T d tilde(V) $
+
+Now, we want to eliminate $U$ from the right hand side, and make it 
+in terms of temperature, pressure and volume only. By doing so, 
+we can calculate the change in internal energy based on the 
+temperature. These are things we can measure. How do we do so?
+
+For this, we can reintroduce our first and second law to provide us 
+additional equations to find U in terms of T and tilde(V).
+
+(in progress)
+$ "dU" = T "ds" - P d tilde(V) $
+we can compare this with:
+$ "dU" = ( (diff U)/(diff s) )_tilde(V) "ds" - ( (diff U)/(diff tilde(V)) )_s  d tilde(V) $
 
 
 
