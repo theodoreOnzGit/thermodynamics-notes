@@ -424,6 +424,7 @@ $ eta_"max,Carnot" = 1 - T_C/T_H $
 
 = Isentropic Relations
 
+
 In textbooks, we have relations for isentropic processes of ideal 
 gas with approximately constant heat capacity:
 $  c_tilde(V) ln (T_2/T_1) = - R ln (tilde(V)_2/tilde(V)_1) $
@@ -433,6 +434,7 @@ $  (T_2/T_1)^(c_tilde(V)) =   (tilde(V)_2/tilde(V)_1)^(- R) $
 $  (T_2/T_1) =   (tilde(V)_2/tilde(V)_1)^(- R/c_tilde(V)) $
 $  (T_2/T_1) =   (tilde(V)_1/tilde(V)_2)^( R/c_tilde(V)) $
 
+== Enthalpy Relations from P, V, T and $c_p$
 Now, we often have the heat capacity ratio, denoted as k or $gamma$.
 For $c_p$, we use enthalpy relations involving the first and second law.
 
@@ -497,6 +499,62 @@ $ tilde(V) = (R T)/P $
 Hence, for ideal gas:
 $ "dh" = c_P "dT" + [T R/P + tilde(V) ]  "dP" $
 $ "dh" = c_P "dT" $
+
+== Ideal Gas Specific Heat Ratios
+
+We have shown for ideal gas:
+$ "dh" = c_P "dT" $
+$ "du" = c_tilde(V) "dT" $
+
+By definition:
+
+$ "dh" = "du" + P d tilde(V) + tilde(V) "dP" $
+
+Substituting the ideal gas heat capacities:
+
+$ c_p "dT" = c_tilde(V) "dT" + P d tilde(V) + tilde(V) "dP" $
+$ c_p  = c_tilde(V)  + P (d tilde(V))/("dT") + tilde(V) ("dP")/("dT") $
+
+We can find our derivatives relatively easily:
+$ tilde(V) = d/(d T) (R T)/P $
+
+
+$ d/(d T) tilde(V) = d/(d T)(R T)/P $
+
+Now, we are dealing with total derivatives. So using quotient rule,
+
+
+$ d/(d T) tilde(V) = R (P - T (d P)/(d T))/P^2 $
+
+Substituting back, we get:
+$ c_p  = c_tilde(V)  + P R (P - T (d P)/(d T))/P^2 + tilde(V) ("dP")/("dT") $
+$ c_p  = c_tilde(V)  +  R (P - T (d P)/(d T))/P + tilde(V) ("dP")/("dT") $
+$ c_p  = c_tilde(V)  +  R  - (R T)/P (d P)/(d T) + tilde(V) ("dP")/("dT") $
+
+Since $tilde(V) = (R T)/P$ for ideal gas,
+
+$ c_p  = c_tilde(V)  +  R $
+
+== Isentropic Relations in Terms of Specific Heat Ratio 
+
+Let's define specific heat ratio k, sometimes denoted as $gamma$:
+
+$ k = c_p/c_tilde(V) $
+
+For monoatomic gases, $c_tilde(V)$ = $3/2 R$. Hence, $c_p$ is $5/2 R$. And 
+Hence:
+
+#let R_joule_per_mole_per_kelvin = 8.314
+#let cv_monoatomic_gas = 3/2*R_joule_per_mole_per_kelvin
+#let cp_monoatomic_gas = cv_monoatomic_gas + R_joule_per_mole_per_kelvin
+#let cp_cv_ratio_monoatomic_gas = calc.round(
+  cp_monoatomic_gas/cv_monoatomic_gas,
+digits: 4)
+
+
+$ k = c_p/c_tilde(V) = 5/3 = #cp_cv_ratio_monoatomic_gas $
+
+== Pressure and Volume Relations
 
 
 
