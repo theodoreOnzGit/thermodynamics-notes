@@ -365,9 +365,30 @@ $  c_tilde(V)/T "dT" = - R /(tilde(V)) d tilde(V) $
 
 Therefore, if we integrate between two states:
 
-
 $  c_tilde(V) ln (T_2/T_1) = - R ln (tilde(V)_2/tilde(V)_1) $
 
+Now, this is quite an important piece ofr the puzzle. Given two 
+temperatures, we can calculate the volume ratios between the two of them.
+This assumes of course, that we know the specific volume at the first state 
+as well. How much work is done then when expanding the gas?
+
+$ Delta u = integral_(T_1)^(T_2) c_tilde(V) "dT" $
+
+For a monoatomic ideal gas, $c_tilde(V)$ is usually constant 
+at $3/2 R$ @Zannoni1999 again due to statistics of microscopic 
+kinetic energy interactions. In general, however, we cannot take ideal 
+gas heat capacities to be constant. So do note that this does not always 
+apply.
+
+So, for adiabatic expansion of an ideal gas from a $T_H$ to $T_c$:
+$ Delta u = - P d tilde(V) = integral_(T_H)^(T_C) c_tilde(V) "dT" $
+
+For a monoatomic ideal gas:
+$ Delta u = - P d tilde(V) = 3/2 R (T_H - T_C) $
+
+
+Now, note that this work only extracts part of the energy of the gas 
+and converts it into work.
 
 #bibliography("../library.bib", 
 style: "chicago-author-date")
