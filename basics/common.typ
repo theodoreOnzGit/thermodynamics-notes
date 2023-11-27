@@ -307,7 +307,7 @@ relation is something we won't touch just yet, until it is something we
 really need. @eqn:maxwell-thermo-3 is just what we need for now to get 
 rid of the s on the right hand side.
 
-== Back to the Adibatic Isentropic Process
+== Back to the Adibatic Isentropic Expansion Process
 
 Let's substitute @eqn:maxwell-thermo-3 back in:
 
@@ -386,9 +386,119 @@ $ Delta u = - P d tilde(V) = integral_(T_H)^(T_C) c_tilde(V) "dT" $
 For a monoatomic ideal gas:
 $ Delta u = - P d tilde(V) = 3/2 R (T_H - T_C) $
 
-
 Now, note that this work only extracts part of the energy of the gas 
-and converts it into work.
+and converts it into work. This is ultimately due to statistics that 
+manifests itself as the second law. How then can we find out the efficiency
+of this heat engine? What percentage of the heat added goes to work?
+
+To understand this, we need to consider the Carnot Engine and Carnot Cycle.
+This is the ideal heat engine, with zero entropy generation.
+
+
+= Carnot Engine and Carnot Cycle
+
+For any engine, we measure efficiency $eta$ using the ratio of 
+net work out divided by the heat input @Cengel2011:
+
+$ eta = W_"net out"/Q_"in" $
+
+Of course, part of the energy cannot be used for work, and needs 
+to be rejected as waste heat $Q_"out"$:
+$ eta = (Q_"in"-Q_"out")/Q_"in" $
+
+$ eta = 1 - Q_"out"/Q_"in" $
+
+To determine engine efficiency, we need to consider this ratio and 
+$Q_"out"$ and $Q_"in"$. To find that out, we need a mental model of 
+how an ideal heat engine would work. This engine is the Carnot Engine.
+It is based on the assumption that every process is reversible and that 
+there is no entropy generation.
+
+Now, 
+
+TBC
+
+We should get 
+
+$ eta_"max,Carnot" = 1 - T_C/T_H $
+
+= Isentropic Relations
+
+In textbooks, we have relations for isentropic processes of ideal 
+gas with approximately constant heat capacity:
+$  c_tilde(V) ln (T_2/T_1) = - R ln (tilde(V)_2/tilde(V)_1) $
+$ ln (T_2/T_1)^(c_tilde(V)) =  ln (tilde(V)_2/tilde(V)_1)^(- R) $
+$  (T_2/T_1)^(c_tilde(V)) =   (tilde(V)_2/tilde(V)_1)^(- R) $
+
+$  (T_2/T_1) =   (tilde(V)_2/tilde(V)_1)^(- R/c_tilde(V)) $
+$  (T_2/T_1) =   (tilde(V)_1/tilde(V)_2)^( R/c_tilde(V)) $
+
+Now, we often have the heat capacity ratio, denoted as k or $gamma$.
+For $c_p$, we use enthalpy relations involving the first and second law.
+
+$ h equiv u + P tilde(V) $
+
+$ "dh" equiv "du" + P d tilde(V) + tilde(V) "dP" $
+
+$ "dh" equiv T"ds" - P d tilde(V) + P d tilde(V) + tilde(V) "dP" $
+
+$ "dh" equiv T"ds" + tilde(V) "dP" $
+
+
+
+$ "dh"(T,P) = ( (diff h)/(diff T) )_P "dT" + ( (diff h)/(diff P) )_T d P $
+
+$  c_p equiv ( (diff h)/(diff T) )_P $
+
+$ "dh"(T,P) = c_P "dT" + ( (diff h)/(diff P) )_T d P $
+
+Again, let's use the first and second law and some calculus to get rid of 
+$( (diff h)/(diff P) )_T$.
+
+$ "dh" equiv T"ds" + tilde(V) "dP" $
+
+We get rid of $T"ds"$ using an expression of $s(P,T)$:
+
+$ "ds" (P,T) = ( (diff s)/(diff T) )_P "dT" + ( (diff s)/(diff P) )_T "dP" $
+
+Substituting back into the Tds relation for dh:
+
+$ "dh" = T[( (diff s)/(diff T) )_P "dT" + 
+( (diff s)/(diff P) )_T "dP" ] + tilde(V) "dP" $
+
+$ "dh" = T( (diff s)/(diff T) )_P "dT" + 
+[T ( (diff s)/(diff P) )_T + tilde(V) ]  "dP" $
+
+Comparing coefficients, 
+
+$ c_p =  T( (diff s)/(diff T) )_P $
+
+$ "dh" = c_P "dT" + 
+[T ( (diff s)/(diff P) )_T + tilde(V) ]  "dP" $
+
+Now, we can use Maxwell's relations to get rid of $( (diff s)/(diff P) )_T$.
+
+$ g equiv h - T s $
+$ "dG" = "dh" - T "ds" - s "dT" $
+$ "dG" = tilde(V) "dP" - s "dT" $
+
+From this, the Maxwell relations are @Cengel2011:
+
+$ ( (diff s)/(diff P) )_T = ( (diff tilde(V))/(diff T) )_P $
+
+
+$ "dh" = c_P "dT" + 
+[T ( (diff tilde(V))/(diff T) )_P + tilde(V) ]  "dP" $
+
+For ideal gas, we obtain:
+
+$ tilde(V) = (R T)/P $
+
+Hence, for ideal gas:
+$ "dh" = c_P "dT" + [T R/P + tilde(V) ]  "dP" $
+$ "dh" = c_P "dT" $
+
+
 
 #bibliography("../library.bib", 
 style: "chicago-author-date")
