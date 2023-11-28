@@ -82,6 +82,20 @@ $ s_2 - s_1 = R ln (tilde(V)_2/tilde(V)_1) $
 
 $ Delta s_(1 arrow.r 2) = R ln (tilde(V)_2/tilde(V)_1) $
 
+This is idealised heat addition
+
+=== Isobaric Heat Addition in Brayton Cycle
+
+Now for the Brayon cycle, we have Isobaric heat addition.
+
+Now we start with ideal gas analysis because it is easier.
+
+$ "dU" = c_tilde(V) "dT" $
+
+In isobaric case, we expect a temperature rise, so dU $eq.not$ 0 J/mol.
+
+$ "dU"  = T "ds" - P d tilde(V) $ 
+
 = Appendix 
 
 == Example cetz plots
