@@ -307,7 +307,9 @@ gas to several thermal reservoirs, each with increasing temperatures.
 This would be the most reversible way to add heat. Unfortunately,
 this would be too slow and cumbersome, and you would still need a 
 thermal reservoir at $T_H$ to bring the gas in the Brayton cycle up 
-to $T_H$. In Brayton cycles, we only consider heat addition from the thermal 
+to $T_H$. In Brayton cycles, if we fix $T_H$ and $T_C$, only then can 
+we compare it to the Carnot cycle. With this, we only consider 
+heat addition from the thermal 
 reservoir at $T_H$, not from an infinite series of thermal reservoirs 
 to ensure reversible heating.
 
@@ -427,8 +429,23 @@ $ 0 =  r_p^((-1)/k ) $
 $ 0 =  1/r_p^(1/k) $
 
 For a fixed k, we once again require $r_p arrow.r infinity$, which is 
-not quite feasible.
+not quite feasible. This is perhaps not a good way to compare efficiency 
+of Brayton cycle to Carnot cycle.
 
+Bruh, I don't understand lol... how do i compare brayton cycle to carnot 
+cycle? It seems the Brayton cycle efficiency doesn't even depend on 
+temperature. However, as expected, the Brayton cycle efficiency 
+reaches Carnot efficiency at fixed temperature bounds as $r_p arrow.r infinity$
+in literature @Shaw2008.
+
+IDK how to prove it mathematically though.
+
+
+== Work Ratio
+
+Thus, we use a different performance metric called work ratio.
+
+$ "work ratio" = (W_"turbine" )/(W_"turbine" - W_"compressor") $
 
 
 TBD
