@@ -20,6 +20,8 @@
 // git clone https://github.com/johannes-wolf/cetz
 // cd cetz 
 // just install
+//
+// it is typst's equivalent of tikz
 #import "@preview/cetz:0.1.2"
 
 = Brayton Cycle 
@@ -35,7 +37,9 @@ The Carnot Cycle consists of four stages:
 
 = Appendix 
 
-== Example cetz plot 
+== Example cetz plots
+
+=== Function Type
 
 #cetz.canvas({
   import cetz.plot
@@ -47,6 +51,44 @@ samples: 10, mark: "x", style: (mark: (stroke: blue)))
 })
 })
 
+Syntax:
+```typst
+#cetz.canvas({
+  import cetz.plot
+  plot.plot(size: (3,2), x-tick-step: 180, y-tick-step: 1,
+  x-unit: $degree$, y-max: .5, {
+    plot.add(domain: (0, 360), x => calc.sin(x * 1deg))
+    plot.add(domain: (0, 360), x => calc.cos(x * 1deg),
+samples: 10, mark: "x", style: (mark: (stroke: blue)))
+})
+})
+```
+
+
+=== Data Type
+
+Allows for arrays of data. Unsure about reading csv files yet...
+#cetz.canvas({
+  import cetz.plot
+  plot.plot(size: (3,2), x-tick-step: 180, y-tick-step: 1,
+  x-unit: $degree$, y-max: .5, {
+    plot.add(domain: (0, 360), x => calc.sin(x * 1deg))
+    plot.add(domain: (0, 360), ((0,0), (180,0.5), (360,-1)),
+samples: 10, mark: "x", style: (mark: (stroke: blue)))
+})
+})
+
+```typst
+#cetz.canvas({
+  import cetz.plot
+  plot.plot(size: (3,2), x-tick-step: 180, y-tick-step: 1,
+  x-unit: $degree$, y-max: .5, {
+    plot.add(domain: (0, 360), x => calc.sin(x * 1deg))
+    plot.add(domain: (0, 360), ((0,0), (180,0.5), (360,-1)),
+samples: 10, mark: "x", style: (mark: (stroke: blue)))
+})
+})
+```
 
 #bibliography("../library.bib", 
 style: "chicago-author-date")
