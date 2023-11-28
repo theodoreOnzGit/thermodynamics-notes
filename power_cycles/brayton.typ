@@ -94,7 +94,52 @@ $ "dU" = c_tilde(V) "dT" $
 
 In isobaric case, we expect a temperature rise, so dU $eq.not$ 0 J/mol.
 
+Therefore, the internal energy relation becomes inconvenient to use.
+
 $ "dU"  = T "ds" - P d tilde(V) $ 
+
+However, we can use enthalpy equation because it is more convenient to 
+use.
+
+$ "dh"  = T "ds" + tilde(V) "dP" $ 
+
+Since dP = 0 Pa, then:
+
+$ "dh"  = T "ds" $ 
+
+At a constant pressure, 
+
+$ c_P "dT"  = T "ds" $ 
+
+$ s_2 - s_1 = c_P ln(T_2/T_1) $
+$ Delta s_(1 arrow.r 2) = c_P ln(T_2/T_1) $
+
+How does this compare with the entropy change for the isothermal process?
+
+Take $T = (P tilde(V))/R $:
+
+$ Delta s_(1 arrow.r 2) = c_P ln([(P_2 tilde(V)_2)/R]/[(P_1 tilde(V)_1)/R]) $
+
+In an isobaric process, $T_1$ = $T_2$
+
+$ Delta s_(1 arrow.r 2) = c_P ln(tilde(V)_2/tilde(V)_1) $
+
+Now, we can use the heat capacity ratio k 
+
+$ k equiv c_P/c_tilde(V) $
+and for ideal gas 
+
+$ c_P = R + c_tilde(V) $
+
+And we get:
+$ Delta s_(1 arrow.r 2",isobaric") = [R + c_tilde(V)] ln(tilde(V)_2/tilde(V)_1) $
+
+Whereas for the isothermal case:
+$ Delta s_(1 arrow.r 2",isothermal") = R ln(tilde(V)_2/tilde(V)_1) $
+
+From this, we can see from this direct comparison that for an ideal gas,
+the entropy change increases for an isobaric process compared to an 
+isothermal process.
 
 = Appendix 
 
