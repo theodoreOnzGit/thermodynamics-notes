@@ -288,8 +288,18 @@ How does this compare to the Carnot cycle? After all, the Brayton Cycle
 is a heat engine, and would therefore be limited by Carnot efficiency. It 
 is difficult to compare the efficiencies directly because we can adjust 
 the compressor ratio $r_p$. One might wonder if we can increase $r_p$
-indefinitely to obtain maximum efficiency. 
+indefinitely to obtain maximum efficiency. The only way to find out 
+is via differentiation.
 
+$ (diff)/(diff r_p) eta_"brayton" = (diff)/(diff r_p)[ 1 -  1/r_p^((k-1)/k)] $
+
+$ (diff)/(diff r_p) eta_"brayton" = -(diff)/(diff r_p)[   1/r_p^((k-1)/k)] $
+$ (diff)/(diff r_p) eta_"brayton" = -(diff)/(diff r_p)[ r_p^((1-k)/k)] $
+
+$ (diff)/(diff r_p) eta_"brayton" = -(1-k)/k [ r_p^((1-k)/k-1)] $
+$ (diff)/(diff r_p) eta_"brayton" = -(1-k)/k [ r_p^((1-k)/k-k/k)] $
+$ (diff)/(diff r_p) eta_"brayton" = -(1-k)/k [ r_p^((1-2 k)/k)] $
+TBD
 
 = Appendix 
 
