@@ -26,6 +26,8 @@
 
 = Brayton Cycle 
 
+
+== Comparison with Carnot Cycle
 Brayton Cycle is less ideal compared to Carnot Cycle.
 
 
@@ -38,7 +40,8 @@ The Carnot Cycle consists of four stages:
 
 
 In contrast, the Brayton Cycle Consists of the following four 
-stages (I probably need to check this):
+stages (I probably need to check the pressures and temperature 
+labelling) @Cengel2011:
 + Isobaric Heat Addition at $P_1$
 + adiabatic isentropic expansion from $T_1$ to $T_2$
 + Isobaric Heat Removal at $P_2$
@@ -48,12 +51,36 @@ The adiabatic processes are quite pretty much identical
 to the Carnot Cycle as they are isentropic ideal processes. The main 
 difference is that heat addition is isobaric rather than isothermal.
 
+=== Isothermal Heat Addition in Carnot Cycle
+
 For isothermal processes:
 
 #numbered_eq(
   $P_1 tilde(V)_1 = P_2 tilde(V)_2 $
 )
 
+For this: 
+
+$ "dU"  = T "ds" - P d tilde(V) $ 
+
+For ideal gas, 
+
+$ "dU" = c_tilde(V) "dT" $
+
+Since the process is isothermal, dU = 0 J/mol.
+
+$ 0  = T "ds" - P d tilde(V) $ 
+
+In isothermal heat addition, PV = constant.
+
+
+$ 0  = T "ds" - (R T)/tilde(V) d tilde(V) $ 
+
+For non zero T, 
+$ 0  = "ds" - (R)/tilde(V) d tilde(V) $ 
+$ s_2 - s_1 = R ln (tilde(V)_2/tilde(V)_1) $
+
+$ Delta s_(1 arrow.r 2) = R ln (tilde(V)_2/tilde(V)_1) $
 
 = Appendix 
 
