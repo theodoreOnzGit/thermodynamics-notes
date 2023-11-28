@@ -568,10 +568,18 @@ $ (tilde(V)_1/tilde(V)_4) = (tilde(V)_2/tilde(V)_3)  $
 To obtain:
 $ (tilde(V)_3/tilde(V)_4) = (tilde(V)_2/tilde(V)_1)  $
 
+Note that this volume ratio is derived based on a key constraint:
+that the entropy of the state 1 is equal to state 4, and the entropy 
+of state 3 is equal to state 2. In essence, we cannot decrease entropy,
+therefore, we cannot expand our gas indefinitely and get extra work.
+This is how the second law comes into play in the Carnot Cycle.
+
 Thus, the logarithms cancel out, and we should get the Carnot 
 Efficiency formula @Cengel2011:
 
 $ eta_"max,Carnot" = 1 - T_C/T_H $
+
+
 
 = Isentropic Relations
 

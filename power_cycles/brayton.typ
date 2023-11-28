@@ -152,6 +152,138 @@ heating, and much more suited for gas turbines. Do note that this does not
 include irreversibilities due to frictional losses in the cycle. We 
 just changed the way in which we add and extract heat.
 
+== Brayton Cycle Efficiency
+
+How does the Brayton Cycle compare to the Carnot Cycle?
+
+The Carnot Efficiency is:
+
+#numbered_eq(
+  $ eta_"Carnot" = 1 - T_C/T_H $
+  )
+
+Remember that in General, for any heat engine's power cycle:
+
+
+$ eta = 1 - Q_"out"/Q_"in" $
+
+
+Let us consider the Brayton Cycle.
+
+Firstly, what is the heat added and what is the heat removed?
+
+The heat added $Q_"in"$ is determined in the isobaric process.
+
+In this process,
+
+$ "dh" = c_P "dT" $
+
+For isobaric processes:
+$ "dh" = T "ds" $
+
+The enthalpy change is equal to the heat addition.
+
+Therefore, for ideal gas with approximately constant heat capacity,
+$ h_2 - h_1 = c_P (T_2-T_1) $
+
+$ Q_"in" = c_P (T_2-T_1) $
+
+From state 2 to state 3, we have isentropic adiabatic expansion.
+
+
+
+From state 3 to state 4, for $Q_"out"$, we have isobaric heat removal.
+Obviously, $T_4 eq.lt T_3$ since it's a cooling process.
+
+$ Q_"in,isobaric cooling" = c_P (T_4-T_3) lt 0 $
+
+
+$ Q_"out" = -c_P (T_4-T_3) $
+
+Therefore, the heat removed is:
+$ Q_"out" = c_P (T_3-T_4) gt 0 $
+
+The efficiency therefore is:
+
+$ eta = 1 - [c_P (T_3-T_4)]/[c_P (T_2-T_1)] $
+
+For ideal gases with somewhat constant $c_P$:
+
+$ eta = 1 -  (T_3-T_4)/ (T_2-T_1) $
+
+Now, this is not too helpful since we have four different temperatures.
+However, these temperatures are once again constrained by their entropy,
+in that between state 2 to 3, there is isentropic adiabatic expansion.
+Now, the adiabatic expansion process governs the relationship between 
+temperature and volume as well as temperature and pressure. 
+
+We shall use pressure relations since the heat addition and removal process 
+is isobaric. And this makes our life much easier.
+
+For isobaric heat addition, from state 1 to state 2:
+
+$ P_1 = P_2 $
+
+For isobaric heat removal from state 3 to state 4:
+
+$ P_3 = P_4 $
+
+For isentropic adiabatic expansion from state 2 to state 3:
+
+$ T_3/T_2 = (P_3/P_2)^((k-1)/k) $
+
+From state 4 to state 1, we have adiabatic isentropic compression:
+
+$ T_4/T_1 = (P_4/P_1)^((k-1)/k) $
+
+This gives us equations with which to constrain our Brayton Cycle.
+Based on this, let us eliminate $P_2$ and $P_4$:
+
+
+$ T_3/T_2 = (P_3/P_1)^((k-1)/k) $
+$ T_4/T_1 = (P_3/P_1)^((k-1)/k) $
+
+So, 
+
+$ T_3/T_2 = T_4/T_1 $
+
+Equivalently, 
+$ T_3/T_4 = T_2/T_1 $
+
+Let's substitute that into our efficiency equation:
+
+$ eta = 1 -  (T_3-T_4)/ (T_2-T_1) $
+$ eta = 1 -  T_4/T_1 (T_3/T_4-1)/ (T_2/T_1-1) $
+
+In terms of temperatures, we get:
+
+$ eta = 1 -  T_4/T_1 $
+
+What is $T_4$? Remember, state 4 is after the expansion process
+and the isobaric cooling process. This is also the temperature at 
+the compressor inlet. And then for $T_1$, it is 
+the state after isentropic compression.
+This is the temperature at the isentropic compressor outlet. Now,
+these temperatures ratios do not depend solely on the temperatures of 
+the thermal reservoirs, but more directly on how much work the
+compressor does on the gas. 
+
+$ eta = 1 -  T_4/T_1 $
+$ T_4/T_1 = (P_3/P_1)^((k-1)/k) $
+
+$ eta = 1 -  (P_3/P_1)^((k-1)/k) $
+
+Since the heat is added and removed in two isobaric processes, the 
+low pressure process at $P_3$ and high pressure process at $P_1$, or 
+equivalently, $P_3 = P_"low"$ and $P_1 = P_"high"$
+
+$ eta = 1 -  (P_"low"/P_"high")^((k-1)/k) $
+
+The efficiency is determined solely by the compressor ratio 
+$r_p = P_"high"/P_"low"$ @Cengel2011.
+
+$ eta_"brayton" = 1 -  1/r_p^((k-1)/k) $
+
 = Appendix 
 
 == Example cetz plots
