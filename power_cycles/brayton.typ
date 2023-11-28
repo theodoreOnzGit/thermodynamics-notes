@@ -349,6 +349,85 @@ Therefore, if we constrain $T_H$ and $T_C$:
 $ eta = 1 -  (T_H -T_C (r_p)^((k-1)/k))/ (T_H (r_p)^((k-1)/k) 
 -(r_p)^((2k-2)/k) T_C) $)
 
+Now, given $r_p$ and $k$, we should be able to compare this efficiency to 
+the thermal Carnot efficiency. To determine what the maximum Brayton 
+cycle efficiency is, we need to differentiate this expression with 
+respect to $r_p$. Of course, that would be a pain. I'd rather differentiate
+this with respect to $r_p^((k-1)/k)$. 
+
+Let
+
+$ zeta = r_p^((k-1)/k)  $
+
+$ eta = 1 -  (T_H -T_C zeta)/ (T_H zeta - zeta^2 T_C) $
+$ eta = 1 -  (T_H -T_C zeta)/ (T_H zeta - zeta^2 T_C) $
+
+Using the quotient rule and knowing of course, 
+differentiating 1 results in 0:
+
+$ (diff eta)/(diff zeta) = -[ (T_H zeta - zeta^2 T_C)(-T_C) - 
+(T_H -T_C zeta)(T_H - 2 zeta T_C)]/ (T_H zeta - zeta^2 T_C)^2  $
+
+Let's tidy up the minus signs:
+
+$ (diff eta)/(diff zeta) = [ (T_H zeta - zeta^2 T_C)(T_C) + 
+(T_H -T_C zeta)(T_H - 2 zeta T_C)]/ (T_H zeta - zeta^2 T_C)^2  $
+
+$ (diff eta)/(diff zeta) = [ (T_H T_C zeta - zeta^2 T_C^2) + 
+(T_H -T_C zeta)(T_H - 2 zeta T_C)]/ (T_H zeta - zeta^2 T_C)^2  $
+
+$ (diff eta)/(diff zeta) = [ (T_H T_C zeta - zeta^2 T_C^2) + 
+(T_H^2 + 2 zeta^2 T_C^2 - 2 zeta T_C T_H - zeta T_C T_H)]
+/ (T_H zeta - zeta^2 T_C)^2  $
+
+$ (diff eta)/(diff zeta) = [ (T_H T_C zeta - zeta^2 T_C^2) + 
+(T_H^2 + 2 zeta^2 T_C^2 - 3 zeta T_C T_H )]
+/ (T_H zeta - zeta^2 T_C)^2  $
+
+
+$ (diff eta)/(diff zeta) = [ T_H T_C zeta + 
+T_H^2 +  zeta^2 T_C^2 - 3 zeta T_C T_H ]
+/ (T_H zeta - zeta^2 T_C)^2  $
+
+$ (diff eta)/(diff zeta) = [ T_H^2 +  zeta^2 T_C^2 - 2 zeta T_C T_H ]
+/ (T_H zeta - zeta^2 T_C)^2  $
+
+$ (diff eta)/(diff zeta) = [ T_H - zeta T_C ]^2
+/[ zeta^2 (T_H  - zeta T_C)^2 ]  $
+
+$ (diff eta)/(diff zeta) = 1 / zeta^2   $
+For this solution to be true, we could postulate $zeta arrow.r infinity$.
+But that means an infinite compression ratio, which is practically 
+impossible. 
+
+Well I should have expected this result either way because:
+
+$ eta_"brayton" = 1 -  1/r_p^((k-1)/k) = 1 - 1/zeta $
+
+Performing a partial derivative here would have yield the same result 
+for much less effort (lol). However, this derivative deals with 
+$zeta$, not $r_p$. We should still find efficiency with respect to $r_p$:
+
+
+$ (diff eta)/(diff r_p) = (diff eta)/(diff zeta) (diff zeta)/(diff r_p) $
+
+Since it is not feasible for $(diff eta)/(diff zeta) = 0 $,
+then 
+
+$ (diff zeta)/(diff r_p) = 0 $
+$ (diff zeta)/(diff r_p) = (diff )/(diff r_p) r_p^((k-1)/k) $
+$ (diff zeta)/(diff r_p) = (k-1)/k r_p^((k-1)/k - k/k) $
+$ (diff zeta)/(diff r_p) = (k-1)/k r_p^((-1)/k ) $
+
+Set derivative to 0.
+
+$ 0 = (k-1)/k r_p^((-1)/k ) $
+
+$ 0 =  r_p^((-1)/k ) $
+$ 0 =  1/r_p^(1/k) $
+
+For a fixed k, we once again require $r_p arrow.r infinity$, which is 
+not quite feasible.
 
 
 
