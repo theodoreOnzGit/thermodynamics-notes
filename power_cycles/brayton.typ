@@ -299,6 +299,59 @@ Hence, the Brayton cycle is still limited by $T_H$ and $T_C$.
 $ T_"compressor inlet"/T_"compressor outlet" = 
 (P_"compressor inlet"/P_"compressor outlet")^((k-1)/k) $
 
+How does $T_H$ and $T_C$ come into play? It is evident that during 
+the isobaric heating and cooling, $T_H gt.eq T_"gas"$ during heating 
+and $T_C lt.eq T_"gas"$ during cooling. During isobaric heating, we 
+could theoretically increase temperature with by subjecting the 
+gas to several thermal reservoirs, each with increasing temperatures.
+This would be the most reversible way to add heat. Unfortunately,
+this would be too slow and cumbersome, and you would still need a 
+thermal reservoir at $T_H$ to bring the gas in the Brayton cycle up 
+to $T_H$. In Brayton cycles, we only consider heat addition from the thermal 
+reservoir at $T_H$, not from an infinite series of thermal reservoirs 
+to ensure reversible heating.
+
+Under these assumptions, let's relate $eta$ to $T_H$, $T_C$ and $r_p$.
+We start with:
+
+$ eta = 1 -  (T_3-T_4)/ (T_2-T_1) $
+
+$T_4$ is the temperature of the compressor inlet, which should be 
+right after the gas has expanded and cooled. Thus, $T_4 = T_C$.
+In the same note, we have $T_2 = T_H$ as state 2 represents the 
+state of the gas after isobaric heating.
+
+$ eta = 1 -  (T_3-T_C)/ (T_H-T_1) $
+
+Now, due to the adiabatic isentropic compression process,
+
+
+$ T_3/T_2 = (P_3/P_1)^((k-1)/k) $
+$ T_4/T_1 = (P_3/P_1)^((k-1)/k) $
+
+If we use $T_C$ and $T_H$:
+
+$ T_3/T_H = (1/r_p)^((k-1)/k) $
+$ T_3 = T_H (1/r_p)^((k-1)/k) $
+$ T_C/T_1 = (1/r_p)^((k-1)/k) $
+$ T_1 = (r_p)^((k-1)/k) T_C $
+
+$ eta = 1 -  (T_H (1/r_p)^((k-1)/k)-T_C)/ (T_H-(r_p)^((k-1)/k) T_C) $
+
+$ eta = 1 -  (T_H -T_C (r_p)^((k-1)/k))/ (T_H (r_p)^((k-1)/k) 
+-(r_p)^((k-1)/k)(r_p)^((k-1)/k) T_C) $
+
+
+Therefore, if we constrain $T_H$ and $T_C$:
+
+
+#numbered_eq(
+$ eta = 1 -  (T_H -T_C (r_p)^((k-1)/k))/ (T_H (r_p)^((k-1)/k) 
+-(r_p)^((2k-2)/k) T_C) $)
+
+
+
+
 TBD
 
 = Appendix 
