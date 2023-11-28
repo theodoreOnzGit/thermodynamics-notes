@@ -440,6 +440,33 @@ in literature @Shaw2008.
 
 IDK how to prove it mathematically though.
 
+Okay perhaps this is simpler:
+
+$ eta = 1 -  T_4/T_1 $
+
+State 4 is post isentropic expansion and isobaric cooling. Thus it is 
+the coldest temperature $T_C$.
+
+$ eta = 1 -  T_C/T_1 $
+
+Now, let's fit in $T_H$:
+
+$ eta = 1 -  T_C/T_H T_H/T_1 $
+
+It is evident that since $T_H$ is the maximum temperature, 
+$T_H gt.eq T_1$. Therefore $T_H/T_1 gt.eq 1$. 
+Now, $T_1$ is the compressor exit temperature. It is greater than $T_C$
+but likely cooler than $T_H$. The best case scenario for efficiency is 
+$T_H = T_1$. But that means there is almost no heat added during the 
+isobaric heat addition. In that case, a small amount of heat dh 
+is added to the fluid. In that case:
+
+
+$ eta = 1 -  T_C/T_H  $
+
+We thus arrive back at our Carnot efficiency, assuming we use the thermal 
+reservoir at $T_C$ and $T_H$.
+
 
 == Work Ratio
 
