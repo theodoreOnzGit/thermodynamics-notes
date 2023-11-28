@@ -324,7 +324,7 @@ relation is something we won't touch just yet, until it is something we
 really need. @eqn:maxwell-thermo-3 is just what we need for now to get 
 rid of the s on the right hand side.
 
-== Back to the Adibatic Isentropic Expansion Process
+== Back to the Adiabatic Isentropic Expansion Process
 
 Let's substitute @eqn:maxwell-thermo-3 back in:
 
@@ -556,6 +556,7 @@ From this, the Maxwell relations are @Cengel2011:
 
 $ ( (diff s)/(diff P) )_T = ( (diff tilde(V))/(diff T) )_P $
 
+Therefore:
 
 $ "dh" = c_P "dT" + 
 [T ( (diff tilde(V))/(diff T) )_P + tilde(V) ]  "dP" $
@@ -666,11 +667,76 @@ It follows that:
 $  (P_2/P_1)^((k-1)/k ) =   (tilde(V)_1/tilde(V)_2)^( k - 1) $
 $  (P_2/P_1) =   (tilde(V)_1/tilde(V)_2)^k $
 
-= Entropy Change in General
+= Entropy Changes
 
-For entropy changes, since we already have relations for du and dh
-$ $
+== General Relations
 
+For entropy changes, since we already have relations for du and dh,
+we can just use them straight away:
+
+$ "du" =  c_tilde(V) "dT" + 
+[T( (diff P)/(diff T) )_tilde(V)  - P ] d tilde(V) $
+
+Since:
+
+$ "du" = T"ds" - P d tilde(V) $
+
+We can substitute:
+
+
+$ T"ds"  =  c_tilde(V) "dT" + 
+T(  (diff P)/(diff T) )_tilde(V) d tilde(V) $
+
+Thus we get @Cengel2011:
+
+#numbered_eq(
+$ "ds"  =  c_tilde(V)/T "dT" + ( (diff P)/(diff T) )_tilde(V) d tilde(V) $)
+
+Likewise for ds based on enthalpy, we can do something similar:
+
+$ "dh" = c_P "dT" + 
+[T ( (diff tilde(V))/(diff T) )_P + tilde(V) ]  "dP" $
+
+We use:
+
+$ "dh" = T"ds" + tilde(V) "dP" $
+
+$ T"ds" + tilde(V) "dP"  = c_P "dT" + 
+[T ( (diff tilde(V))/(diff T) )_P + tilde(V) ]  "dP" $
+
+$ T"ds" = c_P "dT" + 
+T ( (diff tilde(V))/(diff T) )_P  "dP" $
+
+
+Thus we get @Cengel2011:
+#numbered_eq(
+$ "ds" = c_P/T "dT" + ( (diff tilde(V))/(diff T) )_P  "dP" $)
+
+Basically, both are the same, but use whatever is more convenient.
+
+== Relations for ideal gas:
+
+
+For the two equivalent entropy relations:
+$ "ds"  =  c_tilde(V)/T "dT" + ( (diff P)/(diff T) )_tilde(V) d tilde(V) $
+
+$ "ds" = c_P/T "dT" + ( (diff tilde(V))/(diff T) )_P  "dP" $
+
+We need $( (diff P)/(diff T) )_tilde(V)$ and $( (diff tilde(V))/(diff T) )_P$
+for an ideal gas.
+
+As seen from before,
+$ ( (diff P)/(diff T) )_tilde(V) = R/tilde(V) $
+
+$( (diff tilde(V))/(diff T) )_P = R/P $
+
+Hence, for ideal gases:
+
+$ "ds"  =  c_tilde(V)/T "dT" + R/tilde(V) d tilde(V) $
+
+$ "ds" = c_P/T "dT" + R/P  "dP" $
+
+Again, use whichever is more convenient.
 
 #bibliography("../library.bib", 
 style: "chicago-author-date")
