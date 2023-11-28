@@ -5,7 +5,13 @@
 #show heading: set block(above: 1.4em, below: 1em)
 
 // equation numbering
-#set math.equation(numbering: "(1)")
+//#set math.equation(numbering: "(1)")
+
+#let numbered_eq(content) = math.equation(
+    block: true,
+    numbering: "(1)",
+    content,
+)
 
 = Motivation for Studying Thermodynamics
 
@@ -177,9 +183,9 @@ $ "du"(T,tilde(V)) = ( (diff u)/(diff T) )_tilde(V) "dT" + ( (diff u)/(diff tild
 We define $c_v =( (diff u)/(diff T) )_tilde(V) $. This is a measurable 
 property called the constant volume heat capacity.
 
+#numbered_eq(
 $ "du"(T,tilde(V)) = c_tilde(V) "dT" 
-+ ( (diff u)/(diff tilde(V)) )_T d tilde(V) $<eqn:du-cv-dt>
-
++ ( (diff u)/(diff tilde(V)) )_T d tilde(V) $)<eqn:du-cv-dt>
 Now, we want to eliminate $u$ from the right hand side, and make it 
 in terms of temperature, pressure and volume only. By doing so, 
 we can calculate the change in internal energy based on the 
@@ -189,15 +195,17 @@ For this, we can reintroduce our first and second law to provide us
 additional equations to find u in terms of T and tilde(V).
 
 (in progress)
-$ "du" = T "ds" - P d tilde(V) $<eqn:du-tds-pdv>
+#numbered_eq(
+$ "du" = T "ds" - P d tilde(V) $)<eqn:du-tds-pdv>
 
 To do so, we need to find $u(T, tilde(V))$ using the first and second 
 law combination. And to do that, we need to eliminate $"ds"$. Since 
 we want $u(T, tilde(V))$, we need $S(T, tilde(V))$ to fully eliminate S 
 and find the right hand side of @eqn:du-tds-pdv.
 
+#numbered_eq(
 $ "ds"(T,tilde(V)) =  ( (diff s)/(diff T) )_tilde(V) "dT" 
-+ ( (diff s)/(diff tilde(V)) )_T d tilde(V) $<ds-t-v>
++ ( (diff s)/(diff tilde(V)) )_T d tilde(V) $)<ds-t-v>
 
 Okay, so we have $S(T, tilde(V))$, but we now have partial derivatives 
 of s we need to get rid of. How shall we do so? Let's substitute 
@@ -206,8 +214,9 @@ of s we need to get rid of. How shall we do so? Let's substitute
 $ "du" = T [( (diff s)/(diff T) )_tilde(V) "dT" 
 + ( (diff s)/(diff tilde(V)) )_T d tilde(V)] - P d tilde(V) $
 
+#numbered_eq(
 $ "du" =  T( (diff s)/(diff T) )_tilde(V) "dT" 
-+ [T( (diff s)/(diff tilde(V)) )_T  - P ] d tilde(V) $<eqn:du-t-s-p-v>
++ [T( (diff s)/(diff tilde(V)) )_T  - P ] d tilde(V) $)<eqn:du-t-s-p-v>
 
 Now, let's compare @eqn:du-t-s-p-v to @eqn:du-cv-dt, we see that we don't 
 really need to worry about $( (diff s)/(diff tilde(V)) )_T$ because if 
@@ -246,8 +255,13 @@ $ "du"(S,tilde(V)) = ( (diff u)/(diff s) )_tilde(V) "ds"
 
 So, when comparing coefficients: 
 
-$ T = ( (diff u)/(diff s) )_tilde(V) $<eqn:T-u-s>
-$ -P = ( (diff u)/(diff tilde(V)) )_s $<eqn:P-u-v>
+#numbered_eq(
+$ T = ( (diff u)/(diff s) )_tilde(V) $
+)<eqn:T-u-s>
+#numbered_eq(
+$ -P = ( (diff u)/(diff tilde(V)) )_s $)
+<eqn:P-u-v>
+
 
 If we differentiate @eqn:T-u-s by $d tilde(V)$ and 
 @eqn:P-u-v by ds,
@@ -261,8 +275,9 @@ $ -((diff P)/(diff s))_tilde(V)
 By Schawrz's theorem, the order of partial derivatives doesn't matter.
 So:
 
+#numbered_eq(
 $ -((diff P)/(diff s))_tilde(V) 
-=  ((diff T)/(diff tilde(V)))_s $<eqn:maxwell-thermo-1>
+=  ((diff T)/(diff tilde(V)))_s $)<eqn:maxwell-thermo-1>
 
 @eqn:maxwell-thermo-1 is the first of four Maxwell relations. These 
 are meant to help us zap away those pesky confusing derivatives. 
@@ -285,7 +300,8 @@ Looks like $"du" - T "ds"$ pops up, and that is simply $-P d tilde(V)$.
 We substitute this in to get:
 
 
-$ "da" = - s "dT" - P d tilde(V) $<eqn:da-sdt-pdv>
+#numbered_eq(
+$ "da" = - s "dT" - P d tilde(V) $)<eqn:da-sdt-pdv>
 
 In @eqn:da-sdt-pdv, we do have s on the right hand side. Thankfully, if 
 we apply Schawrz's rule in a similar manner, we can find out:
@@ -299,8 +315,9 @@ $ -((diff P)/(diff T))_tilde(V)
 Since the order of derivatives doesn't matter, we find Maxwell's third 
 relation:
 
+#numbered_eq(
 $ ((diff s)/(diff tilde(V)))_T 
-= ((diff P)/(diff T))_tilde(V) $<eqn:maxwell-thermo-3>
+= ((diff P)/(diff T))_tilde(V) $)<eqn:maxwell-thermo-3>
 
 @eqn:maxwell-thermo-3 is Maxwell's third relation. The second and fourth 
 relation is something we won't touch just yet, until it is something we 
@@ -434,6 +451,37 @@ tiny bit
 
 
 TBC
+
+== Isothermal Heating
+
+For isothermal processes:
+
+#numbered_eq(
+  $P_1 tilde(V)_1 = P_2 tilde(V)_2 $
+)
+
+For this: 
+
+$ "dU"  = T "ds" - P d tilde(V) $ 
+
+For ideal gas, 
+
+$ "dU" = c_tilde(V) "dT" $
+
+Since the process is isothermal, dU = 0 J/mol.
+
+$ 0  = T "ds" - P d tilde(V) $ 
+
+In isothermal heat addition, PV = constant.
+
+
+$ 0  = T "ds" - (R T)/tilde(V) d tilde(V) $ 
+
+For non zero T, 
+$ 0  = "ds" - (R)/tilde(V) d tilde(V) $ 
+$ s_2 - s_1 = R ln (tilde(V)_2/tilde(V)_1) $
+
+$ Delta s_(1 arrow.r 2) = R ln (tilde(V)_2/tilde(V)_1) $
 
 We should get 
 
