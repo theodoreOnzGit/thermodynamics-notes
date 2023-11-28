@@ -462,13 +462,13 @@ For isothermal processes:
 
 For this: 
 
-$ "dU"  = T "ds" - P d tilde(V) $ 
+$ "du"  = T "ds" - P d tilde(V) $ 
 
 For ideal gas, 
 
-$ "dU" = c_tilde(V) "dT" $
+$ "du" = c_tilde(V) "dT" $
 
-Since the process is isothermal, dU = 0 J/mol.
+Since the process is isothermal, du = 0 J/mol.
 
 $ 0  = T "ds" - P d tilde(V) $ 
 
@@ -483,6 +483,9 @@ $ s_2 - s_1 = R ln (tilde(V)_2/tilde(V)_1) $
 
 $ Delta s_(1 arrow.r 2) = R ln (tilde(V)_2/tilde(V)_1) $
 
+== Carnot Cycle or Engine Efficiency
+
+(TBC)
 We should get 
 
 $ eta_"max,Carnot" = 1 - T_C/T_H $
@@ -663,7 +666,13 @@ It follows that:
 $  (P_2/P_1)^((k-1)/k ) =   (tilde(V)_1/tilde(V)_2)^( k - 1) $
 $  (P_2/P_1) =   (tilde(V)_1/tilde(V)_2)^k $
 
+= Entropy Change in General
+
+For entropy changes, since we already have relations for du and dh
+$ $
+
 
 #bibliography("../library.bib", 
 style: "chicago-author-date")
+
 

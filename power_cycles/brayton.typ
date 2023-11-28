@@ -61,13 +61,13 @@ For isothermal processes:
 
 For this: 
 
-$ "dU"  = T "ds" - P d tilde(V) $ 
+$ "du"  = T "ds" - P d tilde(V) $ 
 
 For ideal gas, 
 
-$ "dU" = c_tilde(V) "dT" $
+$ "du" = c_tilde(V) "dT" $
 
-Since the process is isothermal, dU = 0 J/mol.
+Since the process is isothermal, du = 0 J/mol.
 
 $ 0  = T "ds" - P d tilde(V) $ 
 
@@ -90,13 +90,13 @@ Now for the Brayon cycle, we have Isobaric heat addition.
 
 Now we start with ideal gas analysis because it is easier.
 
-$ "dU" = c_tilde(V) "dT" $
+$ "du" = c_tilde(V) "dT" $
 
-In isobaric case, we expect a temperature rise, so dU $eq.not$ 0 J/mol.
+In isobaric case, we expect a temperature rise, so du $eq.not$ 0 J/mol.
 
 Therefore, the internal energy relation becomes inconvenient to use.
 
-$ "dU"  = T "ds" - P d tilde(V) $ 
+$ "du"  = T "ds" - P d tilde(V) $ 
 
 However, we can use enthalpy equation because it is more convenient to 
 use.
