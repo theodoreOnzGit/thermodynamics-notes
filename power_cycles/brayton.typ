@@ -284,6 +284,13 @@ $r_p = P_"high"/P_"low"$ @Cengel2011.
 
 $ eta_"brayton" = 1 -  1/r_p^((k-1)/k) $
 
+How does this compare to the Carnot cycle? After all, the Brayton Cycle 
+is a heat engine, and would therefore be limited by Carnot efficiency. It 
+is difficult to compare the efficiencies directly because we can adjust 
+the compressor ratio $r_p$. One might wonder if we can increase $r_p$
+indefinitely to obtain maximum efficiency. 
+
+
 = Appendix 
 
 == Example cetz plots
