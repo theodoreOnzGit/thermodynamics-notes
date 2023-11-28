@@ -35,6 +35,14 @@ The Carnot Cycle consists of four stages:
 + Isothermal Heat Removal at $T_C$
 + adiabatic isentropic compression from $T_C$ to $T_H$
 
+In contrast, the Brayton Cycle Consists of the following four 
+stages (I probably need to check this):
++ Isobaric Heat Addition at $P_1$
++ adiabatic isentropic expansion from $T_1$ to $T_2$
++ Isobaric Heat Removal at $P_2$
++ adiabatic isentropic compression from $T_3$ to $T_4$
+
+
 = Appendix 
 
 == Example cetz plots
