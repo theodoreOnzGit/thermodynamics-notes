@@ -139,7 +139,18 @@ $ Delta s_(1 arrow.r 2",isothermal") = R ln(tilde(V)_2/tilde(V)_1) $
 
 From this, we can see from this direct comparison that for an ideal gas,
 the entropy change increases for an isobaric process compared to an 
-isothermal process.
+isothermal process. This excludes any entropy generation when heat leaves 
+a higher temperature thermal reservoir to a lower temperature gas.
+For a monoatomic gas, $c_tilde(V) = 3/2 R$, so the entropy received 
+by the gas during isobaric heating is about 2.5 times that of that 
+received during isothermal heating for the same heating process. Of course,
+some of that energy is used to increase gas temperature rather than 
+to just expand its volume.
+
+Of course, isobaric heat addition is a more realistic process than isothermal 
+heating, and much more suited for gas turbines. Do note that this does not 
+include irreversibilities due to frictional losses in the cycle. We 
+just changed the way in which we add and extract heat.
 
 = Appendix 
 
