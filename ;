@@ -508,68 +508,26 @@ where the temperature is $T_C$. For this, we have derived that
 for adiabatic expansion:
 
 
-$ (T_3/T_2) = (tilde(V)_2/tilde(V)_3)^(k-1) $
+$ (T_3/T_2) = (tilde(V)_2/tilde(V)_3)^(k-2) $
 
 For state 2, the temperature is $T_H$ while at state 3, the temperature 
 is $T_C$:
 
 
-$ (T_C/T_H) = (tilde(V)_2/tilde(V)_3)^(k-1) $
+$ (T_H/T_C) = (tilde(V)_2/tilde(V)_3)^(k-1) $
 
 Now, at state 3, we remove heat from our gas until isothermally until 
 state 4.
 
-$ Q_"in,C" = R T_C ln((tilde(V)_4)/tilde(V)_3) $
-
-Now, $tilde(V)_4 lt tilde(V)_3$ as heat removal causes the gas to contract.
-So, $Q_"in,C"$ is negative. This is expected as our gas cools. Now,
-to avoid sign confusion, we define the waste heat rejection at the  
-cold sink:
-
-$ Q_"out,C" = -R T_C ln((tilde(V)_4)/tilde(V)_3) $
-$ Q_"out,C" = R T_C ln((tilde(V)_3)/tilde(V)_4) $
-
-
+$ Q_"out,C" = R T_C ln((tilde(V)_4)/tilde(V)_3) $
 
 State 4 necessarily has the same entropy as state 1 since it expands 
 isentropically and adiabatically to state 1.
 
 Therefore,
 
-$ (T_1/T_4) = (tilde(V)_4/tilde(V)_1)^(k-1) $
-$ (T_H/T_C) = (tilde(V)_4/tilde(V)_1)^(k-1) $
-
-From this, we can deduce that:
-
-$ (T_C/T_H) = (tilde(V)_1/tilde(V)_4)^(k-1) $
-Compare this with:
-$ (T_C/T_H) = (tilde(V)_2/tilde(V)_3)^(k-1) $
-
-We essentially get:
-
-$ (tilde(V)_1/tilde(V)_4) = (tilde(V)_2/tilde(V)_3)  $
-
-Now, let's find the net work. We could integrate pressure with respect 
-to volume all over the loop. Or, to make life easier:
-
-$ W_"net" = (Q_"in,H" - Q_"out,C") $
-
-$ eta = W_"net"/Q_"in,H" = 1 - Q_"out,C"/Q_"in,H" $
-
-Substitute with the isothermal heat rejection and removal:
-
-$ eta = 1 - [R T_C ln((tilde(V)_3)/tilde(V)_4)]/[R T_H ln((tilde(V)_2)/tilde(V)_1)] $
-$ eta = 1 - [T_C ln((tilde(V)_3)/tilde(V)_4)]/[T_H ln((tilde(V)_2)/tilde(V)_1)] $
-
-Now, we can use:
-
-$ (tilde(V)_1/tilde(V)_4) = (tilde(V)_2/tilde(V)_3)  $
-
-To obtain:
-$ (tilde(V)_3/tilde(V)_4) = (tilde(V)_2/tilde(V)_1)  $
-
-Thus, the logarithms cancel out, and we should get the Carnot 
-Efficiency formula @Cengel2011:
+(TBC)
+We should get 
 
 $ eta_"max,Carnot" = 1 - T_C/T_H $
 
