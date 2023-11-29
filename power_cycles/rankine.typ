@@ -187,11 +187,11 @@ $ c_p ("per unit mass") = 4184 jouleperkgkelvin $
 
 Now, in the pump when we pump subcooled water, we can estimate its 
 temperature to be more or less at $30 degree C$. At $30 degree C$
-and atmospheric pressure, $alpha_P = 303.24 *10^(-5) K^(-1)$
+and atmospheric pressure, $alpha_P = 303.24 *10^(-6) K^(-1)$
 @Kell1975. $kappa_T = 44.77*10^(-6) bar^(-1)$ @Kell1975. It changes little 
 with temperature, reaching $kappa_T = 46.143*10^(-6) bar^(-1)$ at 
 80#degC. Nevertheless, $alpha_P$ doubles to approximately 
-$641.08 K^(-1)$ at 80#degC. So $alpha_P$ generally increases with 
+$641.08 tenpower(-6) K^(-1)$ at 80#degC. So $alpha_P$ generally increases with 
 temperature for water.
 
 Now, in the pump, we expect large pressure changes and little 
@@ -215,17 +215,16 @@ units. However, in per unit mass units, it is about $1/1000 kg/(m^3)$
 and $alpha_P$ is about 3.93 #tenpower(-4) #perkelvin.
 
 $ [P tildev alpha_P]/cv approx 
-[(30 tenpower(6) Pa)(1/1000 kg/(m^3))(46.143*10^(-6) bar^(-1))]/(4184 jouleperkgkelvin) $
+[(30 tenpower(6) Pa)(1/1000 kg/(m^3))(3.93 tenpower(-4) K^(-1))]/(4184 jouleperkgkelvin)
+= 11.79/4184 = 2.82 tenpower(-3) $
 
-$ [P tildev alpha_P]/cv approx 
-[(30 tenpower(1) bar)(1/1000 kg/(m^3))(46.143*10^(-6) bar^(-1))]/(4184 jouleperkgkelvin)
-= 3.309 tenpower(-9) $
 
-Based on order of magnitude estimates, we can truly neglect this value.
+Based on order of magnitude estimates, we can truly neglect $P tildev alpha_P$
+in comparison to #cv.
 So that:
 $ [cv - P tildev alpha_P] dT =  P tildev kappa_T dP   $
 
-becomes:
+becomes approximated as:
 $ cv  dT =  P tildev kappa_T dP   $
 
 Now, assuming we can find an average value of $kappa_T$, and that #tildev 
@@ -265,6 +264,11 @@ Thus we have a rough correlation for temperature rise based on
 pressure increase for liquid water:
 
 $ cv [T_2 -T_1] = 0.006855 tildev Delta P $
+
+Thus, we show that pump work scales as $tildev Delta P$ at least for 
+liquid water. 
+
+
 
 == Superheat Steam Cycle
 
