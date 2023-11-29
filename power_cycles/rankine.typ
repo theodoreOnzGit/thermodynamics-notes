@@ -204,6 +204,68 @@ atmospheric pressure $alpha_P$ is 3.88 #tenpower(-4) #perkelvin
 @IrvineJr1985. This is about a 1.3% change over 30 MPa. We can almost 
 assume it changes little over large pressure changes.
 
+With some of these figures, let us estimate an order of magnitude for :
+
+$ [P tildev alpha_P]/cv $
+#let kg ="kg"
+#let Pa ="Pa"
+
+We take conservative estimates for pressure, 30 MPa, #tildev is in molar 
+units. However, in per unit mass units, it is about $1/1000 kg/(m^3)$
+and $alpha_P$ is about 3.93 #tenpower(-4) #perkelvin.
+
+$ [P tildev alpha_P]/cv approx 
+[(30 tenpower(6) Pa)(1/1000 kg/(m^3))(46.143*10^(-6) bar^(-1))]/(4184 jouleperkgkelvin) $
+
+$ [P tildev alpha_P]/cv approx 
+[(30 tenpower(1) bar)(1/1000 kg/(m^3))(46.143*10^(-6) bar^(-1))]/(4184 jouleperkgkelvin)
+= 3.309 tenpower(-9) $
+
+Based on order of magnitude estimates, we can truly neglect this value.
+So that:
+$ [cv - P tildev alpha_P] dT =  P tildev kappa_T dP   $
+
+becomes:
+$ cv  dT =  P tildev kappa_T dP   $
+
+Now, assuming we can find an average value of $kappa_T$, and that #tildev 
+is roughly constant:
+
+$ cv [T_2 -T_1] = 0.5 tildev kappa_T (P_2^2 - P_1^2)   $
+
+If we do a units check, $kappa_T = isothermalcompressibility $ 
+is in $1/bar$ or inverse pressure, and by that, both 
+sides are in units of Joules. 
+
+$ cv [T_2 -T_1] = 0.5  kappa_T (P_2 + P_1) tildev (P_2 -P_1)   $
+
+#let atm ="atm"
+
+For $kappa_T$ we assumed it changes little with pressure. At about 30#degC,
+3.5 atm, the isothermal compressibility is 45.55#tenpower(-6) $atm^(-1)$ 
+@Millero1969 and 
+at 30#degC and 8.5 atm, the isothermal compressibility is 45.06 #tenpower(-6) 
+$atm^(-1)$ @Millero1969. Thus, we can see that the change is quite small 
+at $approx 1%$ over 5 atmospheres.
+
+$ cv [T_2 -T_1] = 0.5  kappa_T (P_2 + P_1) tildev (P_2 -P_1)   $
+
+Now, I didn't take the trouble to find literature for values of isothermal 
+compressibility at 30 MPa, or 300 bar. But let's just assume, for simplicity 
+that it is 45.55#tenpower(-6) $atm^(-1)$. And for the sake of expediency 
+(I mean to speed up calculations), I assume the 1 bar and 1 atmosphere is 
+about the same.
+
+$ cv [T_2 -T_1] = 0.5 times 45.55#tenpower(-6) atm^(-1)  (300 + 1)bar 
+tildev (P_2 - P_1)   $
+
+$ cv [T_2 -T_1] = 0.006855 tildev (P_2 - P_1)   $
+
+Thus we have a rough correlation for temperature rise based on 
+pressure increase for liquid water:
+
+$ cv [T_2 -T_1] = 0.006855 tildev Delta P $
+
 == Superheat Steam Cycle
 
 When the original Rankine cycle was developed, turbines were not good 
