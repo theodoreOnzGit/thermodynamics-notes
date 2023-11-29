@@ -139,19 +139,45 @@ it out for water.
 
 $ dtildev = (partial(tildev,P))_T dP + (partial(tildev,T))_P dT $
 
-Both of these partial derivatives are measureable.
+Both of these partial derivatives are measureable properties.
+
+$ dtildev/tildev = 1/tildev (partial(tildev,P))_T + 1/tildev (partial(tildev,T))_P dT $
+
+#let isothermalcompressibility = $-1/tildev (partial(tildev,P))_T$
+#let isobaricthermalexp = $1/tildev (partial(tildev,T))_P$
+
+Isothermal compressibility is denoted $kappa_T = isothermalcompressibility $
+@Guan2022 and isobaric thermal expansivity or coefficient of thermal 
+expansion is denoted $alpha_P = isobaricthermalexp $.
 
 
+$ dtildev = -tildev (isothermalcompressibility) dP + tildev isobaricthermalexp dT $
+$ dtildev = -tildev kappa_T dP + tildev alpha_P dT $
+
+
+Now, we can write the volume change equation as:
 $ du = - P [(partial(tildev,P))_T dP + (partial(tildev,T))_P dT]  $
+$ du = - P [-tildev kappa_T dP + tildev alpha_P dT]  $
+$ du = - P tildev [-kappa_T dP + alpha_P dT]  $
 
-Now, for water, or liquids in general, 
+Now, for water, or liquids in general, we can assume that:
 
 $ c_P approx cv $
 
-$ cv dT = - P [(partial(tildev,P))_T dP + (partial(tildev,T))_P dT]  $
-$ cv dT = -  (partial(tildev,P))_T P dP + (partial(tildev,T))_P P dT  $
+And therefore:
 
-Now, we can choose one to ignore... can we?
+$ cv dT = - P tildev [-kappa_T dP + alpha_P dT]  $
+$ [cv - P tildev alpha_P] dT =  P tildev kappa_T dP   $
+
+Now, we can choose one to ignore... can we? I would speculate that 
+$cv >> P tildev alpha_P$. But we still need to check this.
+
+We can estimate that:
+
+#let joulepermolekelvin = $J/("mol "K)$
+#let jouleperkgkelvin = $J/("kg "K)$
+
+$ c_p ("per unit mass") = 4184 jouleperkgkelvin $
 
 == Superheat Steam Cycle
 
