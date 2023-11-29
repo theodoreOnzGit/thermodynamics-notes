@@ -176,8 +176,33 @@ We can estimate that:
 
 #let joulepermolekelvin = $J/("mol "K)$
 #let jouleperkgkelvin = $J/("kg "K)$
+#let bar = "bar"
+#let degC = $degree$+"C"
+#let tenpower(power) = {
+  $times 10^#power$
+  }
 
+#let perkelvin = $"K"^(-1)$
 $ c_p ("per unit mass") = 4184 jouleperkgkelvin $
+
+Now, in the pump when we pump subcooled water, we can estimate its 
+temperature to be more or less at $30 degree C$. At $30 degree C$
+and atmospheric pressure, $alpha_P = 303.24 *10^(-5) K^(-1)$
+@Kell1975. $kappa_T = 44.77*10^(-6) bar^(-1)$ @Kell1975. It changes little 
+with temperature, reaching $kappa_T = 46.143*10^(-6) bar^(-1)$ at 
+80#degC. Nevertheless, $alpha_P$ doubles to approximately 
+$641.08 K^(-1)$ at 80#degC. So $alpha_P$ generally increases with 
+temperature for water.
+
+Now, in the pump, we expect large pressure changes and little 
+volume or temperature change. Hence, we need to be concerned with changes 
+in $alpha_P$ over large pressure changes rather than large temperature 
+changes. Thankfully, this change is rather small. At 40 #degC and 
+atmospheric pressure $alpha_P$ is 3.88 #tenpower(-4) #perkelvin 
+@IrvineJr1985. At 
+40#degC and 30 MPa, $alpha_P$ is 3.93 #tenpower(-4) #perkelvin 
+@IrvineJr1985. This is about a 1.3% change over 30 MPa. We can almost 
+assume it changes little over large pressure changes.
 
 == Superheat Steam Cycle
 
