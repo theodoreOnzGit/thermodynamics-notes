@@ -28,7 +28,7 @@
 // common bindings for derivatives
 #let mol = "mol"
 #let dT = "dT"
-#let d_tilde_v = "d"+ $tilde(V)$
+#let dtilde_v = "d"+ $tilde(V)$
 #let du = "du"
 #let ds = "ds"
 #let Tds = "Tds"
@@ -38,7 +38,11 @@
   $(diff #y)/(diff #x)$
   }
 
+
+
+
 = Brayton Cycle 
+
 
 
 == Comparison with Carnot Cycle
