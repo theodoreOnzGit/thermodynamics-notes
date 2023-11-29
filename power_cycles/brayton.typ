@@ -467,6 +467,23 @@ $ eta = 1 -  T_C/T_H  $
 We thus arrive back at our Carnot efficiency, assuming we use the thermal 
 reservoir at $T_C$ and $T_H$.
 
+Now, how does $T_1$ relate to $T_H$?
+
+$ Q_"in" = c_P (T_H -T_1) $
+
+$ Q_"in"/c_P = T_H -T_1 $
+$ T_1 = T_H -Q_"in"/c_P $
+
+Substitute back in:
+$ eta = 1 -  T_C/T_H T_H/T_1 $
+
+$ eta = 1 -  T_C/T_H T_H/(T_H -Q_"in"/c_P) $
+$ eta = 1 -  T_C/T_H 1/(1 -Q_"in"/[c_P T_H]) $
+
+It is apparent from this expression that Brayton 
+cycle efficiency reaches Carnot cycle efficiency as 
+$Q_"in" arrow.r 0$.
+
 
 == Work Ratio
 
