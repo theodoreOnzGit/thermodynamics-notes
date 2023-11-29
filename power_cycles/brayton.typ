@@ -24,6 +24,20 @@
 // it is typst's equivalent of tikz
 #import "@preview/cetz:0.1.2"
 
+
+// common bindings for derivatives
+#let mol = "mol"
+#let dT = "dT"
+#let d_tilde_v = "d"+ $tilde(V)$
+#let du = "du"
+#let ds = "ds"
+#let Tds = "Tds"
+#let PdV = "Pd"+$tilde(V)$
+#let RT = "RT"
+#let partial(y,x) = {
+  $(diff #y)/(diff #x)$
+  }
+
 = Brayton Cycle 
 
 
@@ -61,7 +75,7 @@ For isothermal processes:
 
 For this: 
 
-$ "du"  = T "ds" - P d tilde(V) $ 
+$ du = Tds - PdV $
 
 For ideal gas, 
 
@@ -367,7 +381,7 @@ $ eta = 1 -  (T_H -T_C zeta)/ (T_H zeta - zeta^2 T_C) $
 Using the quotient rule and knowing of course, 
 differentiating 1 results in 0:
 
-$ (diff eta)/(diff zeta) = -[ (T_H zeta - zeta^2 T_C)(-T_C) - 
+$ partial(eta,zeta) = -[ (T_H zeta - zeta^2 T_C)(-T_C) - 
 (T_H -T_C zeta)(T_H - 2 zeta T_C)]/ (T_H zeta - zeta^2 T_C)^2  $
 
 Let's tidy up the minus signs:
@@ -469,20 +483,47 @@ reservoir at $T_C$ and $T_H$.
 
 Now, how does $T_1$ relate to $T_H$?
 
-$ Q_"in" = c_P (T_H -T_1) $
 
-$ Q_"in"/c_P = T_H -T_1 $
-$ T_1 = T_H -Q_"in"/c_P $
+Recall also:
 
-Substitute back in:
-$ eta = 1 -  T_C/T_H T_H/T_1 $
+$ r_p^((k-1)/k) = T_1/T_C  $
 
-$ eta = 1 -  T_C/T_H T_H/(T_H -Q_"in"/c_P) $
-$ eta = 1 -  T_C/T_H 1/(1 -Q_"in"/[c_P T_H]) $
 
-It is apparent from this expression that Brayton 
-cycle efficiency reaches Carnot cycle efficiency as 
-$Q_"in" arrow.r 0$.
+Thus, which ultimately yields...
+
+$ eta = 1 -  T_C/T_H [T_H/(T_C r_p^((k-1)/k))] $
+
+
+Which is just another way of saying:
+$ eta_"brayton" = 1 -  1/r_p^((k-1)/k) $
+
+But with the $T_C$ and $T_H$ of the Carnot cycle formula 
+forcefully added in.
+Kind of a roundabout way to get back to our beginning.
+But in essence, as we increase our compressor ratio 
+for fixed $T_H$ and $T_C$ where $T_H$ and $T_C$ are 
+by definition the maximum and minimum temperatures 
+in the gas turbine, then 
+$T_C r_p^((k-1)/k) arrow.r T_H$ because by definition,
+$T_H$ is the highest temperature in the gas turbine.
+To let us have more intuition, we consider 
+that $T_C r_p^((k-1)/k)$ is actually the heater 
+inlet temperature:
+
+
+$ Q_"in" = c_p (T_H -T_C r_p^((k-1)/k))  $
+
+From this statement, we know that no matter 
+that $T_H gt.eq T_C r_p^((k-1)/k)$ for 
+$Q_"in" gt.eq 0 J/"mol"$. So you can increase the 
+compression ratio as high as you want, but due to 
+the way the heater works, the best you can get 
+is where:
+
+$ T_H =T_C r_p^((k-1)/k) $
+
+In this case, $Q_"in" = 0 J/mol$
+
 
 
 == Work Ratio
