@@ -265,6 +265,8 @@ pressure increase for liquid water:
 
 $ cv [T_2 -T_1] = 0.006855 tildev Delta P $
 
+$ cv Delta T = 0.006855 tildev Delta P $
+
 Thus, we show that pump work scales as $tildev Delta P$ at least for 
 liquid water. 
 
