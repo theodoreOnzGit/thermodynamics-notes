@@ -38,6 +38,10 @@
   $(diff #y)/(diff #x)$
   }
 
+#let cv = $c_tilde(V)$
+
+#let v1 = $tilde(V)_1$
+#let v2 = $tilde(V)_2$
 
 
 
